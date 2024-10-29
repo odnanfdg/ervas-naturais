@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ervas da Natureza - Loja Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">🌿 Ervas da Natureza</div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#carrinho">🛒 Carrinho</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section id="home" class="banner">
+    <h1>Cuide-se com o poder da natureza</h1>
+    <p>Aproveite promoções exclusivas e descubra nossos produtos naturais!</p>
+    <button onclick="scrollToSection('produtos')">Ver Produtos</button>
+  </section>
+
+  <!-- Produtos -->
+  <section id="produtos" class="products">
+    <h2>Produtos em Destaque</h2>
+
+    <div class="product-card">
+      <img src="camomila.jpg" alt="Camomila Orgânica">
+      <h3>Camomila Orgânica</h3>
+      <p>Acalma e melhora o sono. 100g - R$ 20,00</p>
+      <button onclick="adicionarCarrinho('Camomila', 20)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="cha-verde.jpg" alt="Chá Verde">
+      <h3>Chá Verde Orgânico</h3>
+      <p>Melhora a digestão. 50g - R$ 18,00</p>
+      <button onclick="adicionarCarrinho('Chá Verde', 18)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="lavanda.jpg" alt="Lavanda">
+      <h3>Óleo Essencial de Lavanda</h3>
+      <p>Alívio do estresse. 10ml - R$ 35,00</p>
+      <button onclick="adicionarCarrinho('Lavanda', 35)">Adicionar ao Carrinho</button>
+    </div>
+  </section>
+
+  <!-- Carrinho -->
+  <section id="carrinho" class="cart">
+    <h2>Seu Carrinho</h2>
+    <div id="cart-items"></div>
+    <p>Total: R$ <span id="total-price">0.00</span></p>
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="blog">
+    <h2>Blog & Dicas</h2>
+    <article>
+      <h3>10 Ervas para Relaxamento</h3>
+      <p>Conheça as melhores ervas para aliviar o estresse.</p>
+      <a href="#">Leia Mais</a>
+    </article>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contact">
+    <h2>Fale Conosco</h2>
+    <form>
+      <input type="text" placeholder="Seu Nome" required>
+      <input type="email" placeholder="Seu E-mail" required>
+      <textarea placeholder="Sua Mensagem" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2024 Ervas da Natureza. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Ervas da Natureza</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <!-- Configuração do Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "SUA-API-KEY",
+      authDomain: "SEU-PROJETO.firebaseapp.com",
+      projectId: "SEU-PROJETO",
+      storageBucket: "SEU-PROJETO.appspot.com",
+      messagingSenderId: "SEU-ID-MESSAGING",
+      appId: "SEU-APP-ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <h1>Login - Ervas da Natureza</h1>
+  <div class="form-container">
+    <form id="login-form">
+      <input type="email" id="email" placeholder="E-mail" required>
+      <input type="password" id="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+    <p>Não tem uma conta? <a href="#" id="register-link">Cadastre-se</a></p>
+  </div>
+  <div id="message"></div>
+</body>
+</html>
